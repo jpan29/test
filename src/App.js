@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { useState } from 'react'
+import './App.css'
+import Alert from './Alert'
+
+function App () {
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const clickHandler = () => {
+    setIsSuccess(true)
+    setTimeout(() => {
+      setIsSuccess(false)
+    }, 5000)
+  }
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={clickHandler}>Alert</button>
+
+      <div role='alert'>
+
+        {isSuccess && (
+          <div id='success-alert'>
+            <div>
+              <Alert> success</Alert>
+            </div>
+          </div>
+        )}
+        {/* {!isSuccess && (
+          <p>NOT success</p>
+        )} */}
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
