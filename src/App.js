@@ -5,6 +5,8 @@ import Alert from './Alert'
 
 function App () {
   const [isSuccess, setIsSuccess] = useState(false)
+  //role b work
+  const [isFailed, setIsFailed] = useState(false)
 
   const clickHandler = () => {
     setIsSuccess(true)
