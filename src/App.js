@@ -16,11 +16,7 @@ function App () {
   }
   return (
 
-    //test
-    //test
-    //test
-    //test
-    //my task
+    //rolea work
     <div className="App">
       <button onClick={clickHandler}>Alert</button>
 
